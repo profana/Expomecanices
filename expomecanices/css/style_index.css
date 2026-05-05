@@ -227,12 +227,14 @@ body{
   transition: border-color .25s, transform .25s, background .25s;
   cursor: pointer;
 }
+
 .historia-btn:hover {
   border-color: var(--accent);
   background: rgba(232,190,52,.06);
   transform: translateY(-3px);
   color: var(--text);
 }
+
 .historia-btn__icon {
   font-size: 2rem;
   flex-shrink: 0;
@@ -241,14 +243,29 @@ body{
   background: rgba(255,255,255,.05);
   border-radius: 50%;
 }
+
 .historia-btn__text {
   font-size: .9rem;
   line-height: 1.4;
 }
+
 .historia-btn__text strong {
   font-size: 1.05rem;
   color: var(--accent);
   display: block;
+}
+
+@media(max-width:768px){
+  .stats-col {
+    position: static !important;
+    top: auto !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .historia-btn {
+    flex: 1 1 calc(50% - .5rem);
+    min-width: 140px;
+  }
 }
  
 
@@ -464,6 +481,16 @@ section,.section-block{padding:6rem 0}
   color: var(--text);
 }
 
+@media(max-width:768px){
+  .materiais-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+  .material-img-wrap {
+    height: 200px;
+  }
+}
+
 /* ── VÍDEO + DESCRIÇÃO ───────────────────────────────────── */
 .video-desc-layout {
   display: flex;
@@ -546,6 +573,20 @@ section,.section-block{padding:6rem 0}
   border: none;
   height: 340px;
   min-height: 340px;
+}
+
+@media(max-width:768px){
+  .em-breve-placeholder {
+    height: 220px;
+    min-height: 220px;
+  }
+  .video-wrapper:has(.em-breve-placeholder) {
+    height: 220px;
+    min-height: 220px;
+  }
+  .video-desc-layout .video-wrapper {
+    width: 100%;
+  }
 }
 
 /* ── OPINIÃO 1ª EDIÇÃO ───────────────────────────────────── */
@@ -664,12 +705,13 @@ footer{border-top:1px solid var(--border)}
   transition:filter .25s;
 }
 .footer-apoio__img:hover{filter:brightness(1) invert(0);}
+.footer-apoio__img--oie{filter:grayscale(1) brightness(1.8);transition:filter .25s;}
+.footer-apoio__img--oie:hover{filter:none;}
  
 .footer-bottom{
   padding:1.25rem 0;border-top:1px solid var(--border);
   font-size:.78rem;color:var(--muted);
 }
-
 
 /* ── SCROLL ANIMATIONS ──────────────────────────────── */
 .fade-up{
